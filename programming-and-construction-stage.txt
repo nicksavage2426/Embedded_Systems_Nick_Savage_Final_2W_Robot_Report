@@ -1,0 +1,16 @@
+Programming
+Progress on the programming side was limited, with the available time spent working through a structured plan using components from a personal home lab. The intended development sequence was as follows:
+
+1. Establish consistent and reliable IMU readings from the MPU-6050 that could be used for control feedback
+2. Program the TB6612 motor controller to consistently drive both DC motors
+3. Integrate the IMU and motor controller code to produce a functional self-balancing robot
+4. Add wireless control via the ESP8266 upon completion of the balancing functionality
+
+Troubleshooting
+Significant problems were encountered when attempting to obtain data from the MPU-6050. The initial assumption was that the MPU itself was faulty. To test this, existing test code from a separate class project was used to verify the sensor, which confirmed it was functioning correctly.
+
+Attention then shifted to the STM32F401 code. To isolate the issue, the I2C communication code was tested on a different STM32 variant, the STM32F103C8T6, where it produced successful data readings. Returning to the custom STM32F401 board, further investigation was conducted using a Tektronix TDS 2012 two-channel oscilloscope, which revealed that the SCL line was being held high, preventing I2C communication. Continuity checks using a Klein multimeter confirmed that all traces were routed correctly and connected to the proper pins. Additional code changes were attempted to resolve the issue, but none were successful.
+
+The root cause was eventually identified as a small solder bridge on the MCU, which was shorting the I2C lines high.
+
+Without functional I2C communication, the remaining steps of the programming plan could not be completed, ultimately preventing either the two-wheeled or three-wheeled robot from reaching a functional state.
