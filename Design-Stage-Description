@@ -13,3 +13,5 @@ The first task of the design stage was creating a system block diagram, which wo
 9. A USB-C input
 10. A ST-Link Conection
 11. Power Componentry (LDOs)
+
+With the components decided the Pinouts were decided in STM Cube MX, where each periferal could be configured.
