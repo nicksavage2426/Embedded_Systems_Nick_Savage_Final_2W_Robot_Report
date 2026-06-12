@@ -1,0 +1,17 @@
+Design Stage:
+
+The first task of the design stage was creating a system block diagram, which would later serve as the foundation for the PCB schematic. This required selecting all relevant components for the system. The chosen components were as follows:
+
+1. A STM32 MPU (STM32F401)
+2. A motor Controller (TB6612)
+3. Two DC Motors (DC Gearbox TT Motor)
+4. A IMU (MPU 6050)
+5. A Wifi Controller (ESP 8266)
+6. A controllable RGB LED (WS2811)
+7. An Encoder (MT6701)
+8. A User LED
+9. A USB-C input
+10. A ST-Link Conection
+11. Power Componentry (LDOs)
+
+With the components decided the Pinouts were decided in STM Cube MX, where each periferal could be configured.
